@@ -1,0 +1,54 @@
+@import './variabels.scss';
+
+.toolbar {
+  margin: 0 0 10px 0;
+  padding: 15px;
+  height: $height-canvas;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 5px gray;
+
+  &__btn {
+    display: block;
+    margin: 0 5px;
+    height: 25px;
+    width: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .brush {
+    background: url(../images/brush.png) center / cover no-repeat;
+  }
+  .rect {
+    background: url(../images/rect.png) center / cover no-repeat;
+  }
+  .circle {
+    background: url(../images/circle.png) center / cover no-repeat;
+  }
+  .eraser {
+    background: url(../images/eraser.png) center / cover no-repeat;
+  }
+  .line {
+    margin-right: 10px;
+    background: url(../images/line.png) center / cover no-repeat;
+  }
+  .undo {
+    margin-left: auto;
+    background: url(../images/undo.png) center / cover no-repeat;
+  }
+  .redo {
+    background: url(../images/redo.png) center / cover no-repeat;
+  }
+  .save {
+    margin-right: 10px;
+    background: url(../images/save.png) center / cover no-repeat;
+  }
+}

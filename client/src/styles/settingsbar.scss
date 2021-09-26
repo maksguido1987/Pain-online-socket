@@ -1,0 +1,15 @@
+@import './variabels.scss';
+
+.settings-bar {
+  padding: 0 20px;
+  height: $height-canvas;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 5px gray;
+  
+  & > input {
+    margin: 0 10px;
+  }
+}
