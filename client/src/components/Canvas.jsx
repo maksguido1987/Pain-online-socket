@@ -50,7 +50,7 @@ const Canvas = observer(() => {
 
   useEffect(() => {
     if (canvasState.username) {
-      const socket = new WebSocket('ws://localhost:5000');
+      const socket = new WebSocket('wss://localhost:5000');
       canvasState.setSocket(socket);
       canvasState.setSessionId(params.id);
       toolState.setTool(new Brush(canvasRef.current, socket, params.id));
