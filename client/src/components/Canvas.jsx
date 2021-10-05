@@ -25,7 +25,7 @@ const Canvas = observer(() => {
     canvasState.setCanvas(canvasRef.current);
     const ctx = canvasRef.current.getContext('2d');
     axios
-      .get(`http://pain-online.cloudno.de/image?id=${params.id}`)
+      .get(`http://localhost:5000/image?id=${params.id}`)
       .then((response) => {
         const img = new Image();
         img.src = response.data;
@@ -50,7 +50,7 @@ const Canvas = observer(() => {
 
   useEffect(() => {
     if (canvasState.username) {
-      const socket = new WebSocket('ws://pain-online.cloudno.de');
+      const socket = new WebSocket('ws://localhost:5000');
       canvasState.setSocket(socket);
       canvasState.setSessionId(params.id);
       toolState.setTool(new Brush(canvasRef.current, socket, params.id));
@@ -116,7 +116,7 @@ const Canvas = observer(() => {
 
   const mouseDownHandler = () => {
     canvasState.pushToUndo(canvasRef.current.toDataURL());
-    axios.post(`http://pain-online.cloudno.de/image?id=${params.id}`, {
+    axios.post(`http://localhost/5000/image?id=${params.id}`, {
       img: canvasRef.current.toDataURL(),
     });
   };
